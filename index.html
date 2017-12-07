@@ -1,0 +1,401 @@
+<html>
+<head>
+  <link rel="stylesheet" href="/node_modules/reveal.js/css/reveal.css">
+  <link rel="stylesheet" href="/node_modules/reveal.js/css/theme/black.css">
+  <link rel="stylesheet" href="/node_modules/reveal.js/lib/css/zenburn.css">
+  <style>
+    code {
+      font-size: 70% !important;
+      line-height: 125% !important;
+    }
+  </style>
+</head>
+<body>
+<div class="reveal">
+  <div class="slides">
+    <section data-markdown>
+      ## Please take your seats
+
+      ## The show is about to begin
+    </section>
+    <section>
+      <section>
+        <h3>Now Playing Your</h3>
+        <h2>
+          <span class="fragment fade-left">Feature: </span>
+          <span class="fragment fade-right">Presentation</span>
+        </h2>
+      </section>
+      <!--<section>-->
+        <!--<h2><u>Disclaimer</u></h2>-->
+        <!--<p class="fragment">Please read the underlying "Gherkin" before proceeding</p>-->
+      <!--</section>-->
+      <section>
+        <pre>
+          <code class="gherkin hljs" data-sample="/features/presentation.feature"></code>
+        </pre>
+      </section>
+    </section>
+    <section>
+      <h1>Part I</h1>
+      <h2 class="fragment">Gherkin-speak</h2>
+    </section>
+    <section>
+      <h2>How Its Written</h2>
+      <ul>
+        <li class="fragment">"Gherkin" is the leading business syntax for BDD and can be written in dozens of human-readable languages</li>
+        <li class="fragment">"Gherkin" was designed to communicate a project's expected behavior across all levels of production</li>
+        <li class="fragment">"Cucumber" is the leading programming framework for interpreting Gherkin and is available in over a dozen programming languages</li>
+        <li class="fragment">"Cucumber" was developed to showcase low-level specifications as credence for code acceptability</li>
+      </ul>
+    </section>
+    <section>
+      <h2>How Its Made</h2>
+      <ul>
+        <li class="fragment">Each feature resides in its own easily-readable file within a projects "features" directory using the ".feature" file extension.</li>
+        <li class="fragment">Executable test code for feature scenario steps resides in the "features" sub-directory: "step_definitions"</li>
+        <li class="fragment">"Gherkin" feature files are transpiled into executable steps by "Cucumber" and processed for testing in the order they were written</li>
+      </ul>
+    </section>
+    <section>
+      <h2>How Its Useful</h2>
+      <ul>
+        <li class="fragment">Steps can be written in a flexible format that allow multiple use-cases to be tested without affecting development</li>
+        <li class="fragment">"Gherkin" provides business owners and managers with a set of specifications suitable for documentation</li>
+        <li class="fragment">"Cucumber" gives feedback for passing, missing and/or failing steps</li>
+        <li class="fragment">The process encourages producers and developers to communicate early and throughout a project's lifecycle which optimizes efficiency</li>
+      </ul>
+    </section>
+    <section>
+      <section>
+        <h2>Language Basics</h2>
+      </section>
+      <section>
+        <h2>Keyword: Feature</h2>
+        <ul>
+          <li class="fragment">Title for the set of scenarios highlighting the expected behaviors</li>
+          <li class="fragment">A description of any size can proceed it (but not required)</li>
+          <li class="fragment">
+            Recommended description qualifiers by line as follows...
+            <ol>
+              <li class="fragment">"As a..." <span class="fragment">(assumed user)</span></li>
+              <li class="fragment">"In order for..." <span class="fragment">(intended service)</span></li>
+              <li class="fragment">"I need to..." <span class="fragment">(expected result)</span></li>
+            </ol>
+          </li>
+        </ul>
+      </section>
+      <section>
+        <h2>Keyword: Scenario</h2>
+        <ul>
+          <li class="fragment">Entry point for a specific flow of executable steps</li>
+          <li class="fragment">Can be named and/or tagged for specific test cases</li>
+          <li class="fragment">
+            Step descriptors must follow a recognizable, ordered pattern...
+            <ol>
+              <li class="fragment">"Given..." <span class="fragment">(setup step)</span></li>
+              <li class="fragment">"When..." <span class="fragment">(action step)</span></li>
+              <li class="fragment">"Then..." <span class="fragment">(assertion step)</span></li>
+            </ol>
+          </li>
+          <li class="fragment">"And" or "But" can proceed any of the step descriptors and will assume its preceded step when executed</li>
+        </ul>
+      </section>
+    </section>
+    <section>
+      <section>
+        <h2>Language Highlights</h2>
+      </section>
+      <section>
+        <h2>Keyword: Background</h2>
+        <ul>
+          <li class="fragment">A set of "Given" and possibly "When" steps that will run before each scenario in a feature file</li>
+          <li class="fragment">Eliminates repetitive steps</li>
+        </ul>
+      </section>
+      <section>
+        <h2>Convention: Data tables</h2>
+        <ul>
+          <li class="fragment">Allows input of rows and columns of data in a readable format that can be printed after any step</li>
+          <li class="fragment">Facilitates testing logic surrounding database entries, lists and dynamic parameters</li>
+        </ul>
+      </section>
+      <section>
+        <h2>Keywords: Scenario Outline / Examples</h2>
+        <ul>
+          <li class="fragment">A pairing of Data tables and Scenarios</li>
+          <li class="fragment">"Examples" exists as a pure data table, without a preceding step</li>
+          <li class="fragment">Each row of "Examples" data gets iterated across "Scenario Outline" steps</li>
+          <li class="fragment">"Scenario Outline" utilizes marked up parameters in its steps to match them with data table column entries</li>
+        </ul>
+      </section>
+    </section>
+    <section>
+      <h1>Part II</h1>
+      <h2 class="fragment">Use the Force, Cuke</h2>
+      <p class="fragment">Success Tips for Cucumber Developers</p>
+    </section>
+    <section>
+      <h2>A New Hope</h2>
+      <ul>
+        <li class="fragment">Let the force be with you! Creating feature files first sets you up best for test-first development</li>
+        <li class="fragment">With practice, you can easily get more code coverage with less tests by supplying Examples to Scenario Outlines</li>
+        <li class="fragment">The steps ARE your test descriptions. Create well-suited methods and classes to fill in the steps to initiate the TDD red-green-refactor lifecycle</li>
+      </ul>
+    </section>
+    <section>
+      <h2>The Empire Strikes Back</h2>
+      <ul>
+        <li class="fragment">BDD is intended to save time in production costs but inevitably there will be changes. Steps, scenarios, and even features will need to be sacrificed.</li>
+        <li class="fragment">Developers should take a logical approach to help shape Scenario steps, but without first getting your hands dirty in implementation, it will be very challenging to shape a clear path.</li>
+      </ul>
+    </section>
+    <section>
+      <h2>Return of the Red-eye</h2>
+      <ul>
+        <li class="fragment">K.I.S.S.<sup>(Keep It Simple, Stupid)</sup> - Steps definitions should follow clean code principles</li>
+        <li class="fragment">Consider using string literals inside steps definitions with bracketed types ({string}, {float}, {word}, {int}) over regular expressions</li>
+        <li class="fragment">Do not keep yourself up trying to get a scenario to pass. Return to it later with a clear head and fresh perspective.</li>
+        <li class="fragment">Step definitions that require many conditionals or data maps most often neat separate or different phrasing</li>
+      </ul>
+    </section>
+    <section>
+      <h2>The PhantomJS Menace</h2>
+      <ul>
+        <li class="fragment">Behaviors often require a full fledged "world" to interact within
+          <ul>
+            <li>Headless browsers: PhantomJS, Zombie</li>
+            <li>Webdrivers: Selenium</li>
+            <li>HTTP Servers: Apache, nginx</li>
+            <li>Web Services: Spring, Express, Django</li>
+          </ul>
+        </li>
+        <li class="fragment">Utilize Cucumber's "World" constructor to spin up world independent of your step definitions</li>
+      </ul>
+    </section>
+    <section>
+      <section>
+        <h2>Attack of the Clones</h2>
+        <p class="fragment">Thoughtful step structuring will reduce step definitions</p>
+        <p class="fragment">Review the underlying scenario steps and definitions</p>
+      </section>
+      <section>
+        <p>Consider the following feature file "attack-of-the-clones.feature"</p>
+        <pre>
+          <code class="gherkin hljs" data-trim>
+          Feature: Attack of the Clones
+
+            Scenario: Clone, Attack Anakin
+              Given I am a clone
+              When I am ordered to use my fists against Anakin
+              Then I should inflict some damage
+
+            Scenario: Stormtrooper, Attack Padme
+              Given I am a stormtrooper
+              When I am ordered to use my blaster against Padme
+              Then I should kill her
+
+            Scenario: Sith, Attack Obi-Wan
+              Given I am a sith
+              When I am ordered to use my lightsaber against Obi-Wan
+              Then I expect to have a 15 minute fight sequence
+          </code>
+        </pre>
+      </section>
+      <section>
+        <h2>Acceptable Definitions</h2>
+        <pre>
+          <code class="javascript hljs" data-trim>
+            // File: /features/step_definitions/attack_steps.js
+
+            import { defineSupportCode } from 'cucumber'
+
+            defineSupportCode(function ({ Given, When, Then }) {
+              Given('I am a clone', function () {})
+              When('I am ordered to use my fists against Anakin', function () {})
+              Then('I should inflict some damage', function () {})
+
+              Given('I am a stormtrooper', function () {})
+              When('I am ordered to use my blaster against Padme', function () {})
+              Then('I should kill her', function () {})
+
+              Given('I am a sith', function () {})
+              When('I am ordered to use my lightsaber against Obi-Wan', function () {})
+              Then('I expect to have a 15 minute fight sequence', function () {})
+            })
+          </code>
+        </pre>
+        <p class="fragment">Problem? <span class="fragment">We have a lot of steps to maintain</span></p>
+      </section>
+      <section>
+        <h2>Reduced Definitions</h2>
+        <p>Reduce common steps into strings with data types and contextually named parameters</p>
+        <pre>
+          <code class="javascript hljs" data-trim>
+            // File: /features/step_definitions/attack_steps.js
+
+            import { defineSupportCode } from 'cucumber'
+
+            defineSupportCode(function ({ Given, When, Then }) {
+              Given('I am a {word}', function (person) {})
+
+              When('I am ordered to use my {word} against {word}', function (weapon, person) {})
+
+              Then('I should inflict some damage', function () {})
+              Then('I should kill her', function () {})
+              Then('I expect to have a 15 minute fight sequence', function () {})
+            })
+          </code>
+        </pre>
+        <p class="fragment">Can it be improved?</p>
+        <p class="fragment">There are a few nuances with languages we might want to address which requires altering the feature file</p>
+      </section>
+      <section>
+        <h2>Flexible Steps for Language Nuances</h2>
+        <p class="fragment">Consider addressing proper article and gender identifiers that may be introduced later</p>
+        <pre class="fragment">
+          <code class="gherkin hljs" data-trim>
+            Scenario: Enemy, Attack Androgeny
+              Given I am a enemy
+              But I am an enemy
+              Then I should kill her
+              But I should kill him
+              But I should kill it
+          </code>
+        </pre>
+        <p class="fragment">Consider quoted words to address possible string types</p>
+        <pre class="fragment">
+          <code class="gherkin hljs" data-trim>
+            Scenario: Darth Vader, Attack Obi-Wan
+              Given I am "Darth Vader"
+              When I am ordered to use my "red lightsaber" against "Obi-Wan Kenobi"
+          </code>
+        </pre>
+      </section>
+      <section>
+        <h2>Refined Definitions</h2>
+        <p>Replacing our words with strings</p>
+        <pre>
+          <code class="javascript hljs" data-trim>
+            // File: /features/step_definitions/attack_steps.js
+
+            import { defineSupportCode } from 'cucumber'
+
+            defineSupportCode(function ({ Given, When, Then }) {
+              // A possible reusable definition for using a preceding article (a, an, the)
+              Given('I am {word} {word}', function (article, person) {})
+              // Quotes in feature steps are stripped in favor of the {string} type replacement
+              Given('I am {string}', function (person) {})
+
+              When('I am ordered to use my {string} against {string}', function (weapon, person) {})
+
+              Then('I should inflict some damage', function () {})
+              Then('I should kill {word}', function (thing_attacked) {})
+              Then('I expect to have a 15 minute fight sequence', function () {})
+            })
+          </code>
+        </pre>
+        <p class="fragment">Any alternatives?</p>
+      </section>
+      <section>
+        <p>We can outline the scenarios with examples</p>
+        <pre>
+          <code class="gherkin hljs" data-trim>
+          Feature: Attack of the Clones
+
+            Scenario Outline: Attack!
+              Given I am --an enemy--
+              When I am ordered to use my --weapon-- against --a good guy--
+              Then I should --show result--
+
+            Examples:
+              | an enemy        | a good guy     | weapon   | show result                       |
+              | a clone         | Anakin         | fists    | inflict some damage               |
+              | a stormtrooper  | Padme          | blaster  | kill her                          |
+              | a sith          | Obi-Wan Kenobi | blaster  | expect a 15 minute fight sequence |
+          </code>
+        </pre>
+        <p class="fragment">The 'Then' assertion would be a vague implementation, could be difficult to implement and may take away other phrasing options in outside features</p>
+      </section>
+    </section>
+    <section>
+      <h1>Part III</h1>
+      <h2 class="fragment">Battle on the Front-end</h2>
+      <p class="fragment">Selenium Chemistry</p>
+    </section>
+    <section>
+      <h2>A Different World</h2>
+      <ul>
+        <li>
+          Unit tests are engineered
+          <ul>
+            <li class="fragment">to run in a single, siloed container</li>
+            <li class="fragment">to execute single units of functionality</li>
+            <li class="fragment">with minimal interfacing requirements</li>
+          </ul>
+        </li>
+        <li>
+          Behavior tests are produced
+          <ul>
+            <li class="fragment">to run in one or more world environments</li>
+            <li class="fragment">to perform multiple steps of feature scenarios</li>
+            <li class="fragment">with versatile interfacing specifications</li>
+          </ul>
+        </li>
+        <li class="fragment">We chose Selenium Webdriver as our World</li>
+      </ul>
+    </section>
+    <section>
+      <h2>The Callbacks Promises Void</h2>
+      <ul>
+        <li class="fragment">Cucumber JS steps can be asynchronous or void of return statements</li>
+        <li class="fragment">Asynchronous callbacks must be passed in as the last parameter and called when operations are complete</li>
+        <li class="fragment">Passing a single parameter to an synchronous callbacks does nothing useful</li>
+        <li class="fragment">Passing a second parameter string 'pending' can be useful when first creating step definitions</li>
+        <li class="fragment">Selenium JS returns promise pattern instances which reduces "callback hell"</li>
+        <li class="fragment">Just be sure to always return your promises in your steps or it will not run asynchronously</li>
+      </ul>
+    </section>
+    <section>
+      <h2>Caching Step Values</h2>
+      <ul>
+        <li class="fragment">To be agile, Cucumber does not have any built in mechanism to read values returned from previous steps</li>
+        <li class="fragment">Thus we created a singleton utility to cache certain parameters used between steps</li>
+        <li class="fragment">Using BeforeEach, we make sure we clear the step cache to prevent tainted tests from previous scenarios</li>
+      </ul>
+    </section>
+    <section>
+      <h2>Working toward (in progress) Solutions</h2>
+      <ul>
+        <li class="fragment">Scrolling to elements with a fixed footer</li>
+        <li class="fragment">Working with Universal, server-rendered elements (progress.browser)</li>
+        <li class="fragment">Focus on how to make this viable and valuable for Lean Startups and MVP driven projects</li>
+        <li class="fragment">Highlight possibilities of reusable feature files and scenarios to save time without cutting corners (login/registration, layout elements, common expected behaviors of components, etc)</li>
+      </ul>
+    </section>
+  </div>
+</div>
+<script src="/node_modules/reveal.js/lib/js/head.min.js"></script>
+<script src="/node_modules/reveal.js/js/reveal.js"></script>
+<script>
+  Reveal.initialize({
+    width: "100%",
+    height: "100%",
+    margin: 0,
+    minScale: 1,
+    maxScale: 1,
+    history: true,
+    dependencies: [
+      { src: '/node_modules/reveal.js/lib/js/classList.js', condition: function() { return !document.body.classList; } },
+      { src: '/node_modules/reveal.js/plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+      { src: '/node_modules/reveal.js/plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+      { src: '/node_modules/reveal.js/plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+      { src: '/node_modules/reveal.js/plugin/search/search.js', async: true },
+      { src: '/node_modules/reveal.js/plugin/zoom-js/zoom.js', async: true },
+      { src: '/node_modules/reveal.js/plugin/notes/notes.js', async: true },
+      { src: '/plugins/sampler.js' }
+    ]
+  });
+</script>
+</body>
+</html>
